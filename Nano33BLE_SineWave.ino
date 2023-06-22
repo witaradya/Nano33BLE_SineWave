@@ -15,7 +15,7 @@
 // Some settings
 constexpr int led_pin = 2;
 constexpr float pi = 3.14159265;                  // Some pi
-constexpr float freq = 0.09;                       // Frequency (Hz) of sinewave
+constexpr float freq = 0.5;                       // Frequency (Hz) of sinewave
 constexpr float period = (1 / freq) * (1000);  // Period (miliseconds)
 
 // TFLite globals, used for compatibility with Arduino-style sketches
@@ -114,10 +114,9 @@ void loop() {
 
   // Print value
   Serial.println(y_val);
-
+  delay(10);
 #if DEBUG
-//  Serial.print("Time for inference (us): ");
-//  Serial.println(micros() - start_timestamp);
+  Serial.print("Time for inference (us): ");
+  Serial.println(micros() - start_timestamp);
 #endif
-
 }
